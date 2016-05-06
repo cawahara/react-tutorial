@@ -8,6 +8,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+
   </head>
   <body>
     <div id="content"></div>
@@ -44,7 +47,7 @@
         );
       }
     });
-    // tutorial4.js
+// tutorial6.js
     var Comment = React.createClass({
       render: function() {
         return (
@@ -52,8 +55,8 @@
             <h2 className="commentAuthor">
               {this.props.author}
             </h2>
-            {this.props.children}
-          </div>
+            {marked(this.props.children.toString())}
+        </div>
         );
       }
     });
